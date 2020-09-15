@@ -1,0 +1,40 @@
+[global]
+follow = mouse
+sort = yes
+
+font = Iosevka
+
+geometry = "300x5-30+20"
+indicate_hidden = yes
+
+frame_width = 2
+frame_color = "#d5c4a1"
+
+separator_color = frame
+separator_height = 2
+
+markup = full
+
+idle_threshold = 120
+
+format = "<b>%s</b>\n%b"
+alignment = center
+word_wrap = yes
+
+title = Dunst
+class = Dunst
+
+[urgency_low]
+background = "#282828"
+foreground = "#ebdbb2"
+timeout = 3
+
+[urgency_normal]
+background = "#282828"
+foreground = "#ebdbb2"
+timeout = 7
+
+[urgency_critical]
+background = "#282828"
+foreground = "#cc241d"
+timeout = 0

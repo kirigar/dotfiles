@@ -1,0 +1,123 @@
+# Reload sxhkd config files
+super + Escape
+	pkill -USR1 -x sxhkd
+
+#
+# Launch shortcuts
+#
+
+# Terminal emulator
+super + Return
+	kitty
+
+# Browser
+super + b
+	firefox
+
+# Program launcher
+super + @space
+	rofi -show drun
+
+# Music player
+super + n
+	kitty ncmpcpp
+
+# File explorer
+super + m
+	kitty ranger
+
+# Calculator
+XF86Calculator
+	speedcrunch
+
+# Uni course chooser
+super + u
+    ~/scripts/choosecourse.sh
+
+#
+# Bspwm shortcuts
+#
+
+# Quit/Restart bspwm
+super + alt + {q,a}
+	bspc {quit,wm -r}
+
+# Close/Kill focused node
+super + {_,shift} + c
+	bspc node -{c,k}
+
+# Focus/Swap in the given direction
+super + {_,shift + }{h,j,k,l}
+	bspc node -{f,s} {west,south,north,east}
+
+# Focus the last node/desktop
+super + {grave,Tab}
+	bspc {node,desktop} -f last
+
+# Focus/Send to the given desktop
+super + {_,shift + }{s,d,f,w,e,r}
+	bspc {desktop -f,node -d} '^{1-6}'
+
+# Expand a window by moving a side outward
+super + ctrl + {h,j,k,l}
+	bspc node -z {left -20 0,bottom 0 20,top 0 -20, right 20 0}
+
+# Contract a window by moving a side inward
+super + ctrl + shift + {h,j,k,l}
+	bspc node -z {right -20 0,top 0 20, bottom 0 -20, left 20 0}
+
+# Toggle fullscreen
+super + v
+	bspc node -t \~fullscreen
+
+# Toggle floating
+super + z
+	bspc node -t \~floating
+
+# Expand a window by moving one of its side outward
+super + alt + {h,j,k,l}
+	bspc node -z {left -20 0,bottom 0 20,top 0 -20,right 20 0}
+
+# contract a window by moving one of its side inward
+super + alt + shift + {h,j,k,l}
+	bspc node -z {right -20 0,top 0 20,bottom 0 -20,left 20 0}
+
+# move a floating window
+super + {Left,Down,Up,Right}
+	bspc node -v {-20 0,0 20,0 -20,20 0}
+
+# Lock the pc
+super + slash
+	~/scripts/lock.sh
+
+# Toggle gaps
+super + 0
+    ~/scripts/togglegaps.sh 12
+
+#
+# Media keys
+#
+
+# Toggle music
+XF86AudioPlay
+	mpc toggle
+
+# Stop music
+XF86AudioStop
+	mpc stop
+
+# Prev/Next song in queue
+{XF86AudioPrev,XF86AudioNext}
+	mpc {prev,next}
+
+# Raise/Lower volume
+{XF86AudioLowerVolume, XF86AudioRaiseVolume}
+	pactl set-sink-volume @DEFAULT_SINK@ {-,+}5%
+
+# Mute volume
+XF86AudioMute
+	pactl set-sink-mute 0 toggle
+
+# Change brightness
+{XF86MonBrightnessDown, XF86MonBrightnessUp}
+	xbacklight -{dec,inc} 10
