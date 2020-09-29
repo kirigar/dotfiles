@@ -45,9 +45,16 @@ alias em="emacsclient -c"
 
 alias cam="mpv av://v4l2:/dev/video0"
 
-# Programs to be devoured from the terminal
-#alias mpv="devour mpv"
-#alias zathura="devour zathura"
+# Add devouring support in zsh
+function devour {
+	id=$(xdo id)
+	xdo hide
+	$@
+	xdo show "$id"
+}
+
+alias mpv="devour mpv"
+alias zathura="devour zathura"
 
 # Enable syntax highlighting
 # Always load this last
