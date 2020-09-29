@@ -27,6 +27,11 @@ if [ -d /etc/X11/xinit/xinitrc.d ] ; then
  unset f
 fi
 
+# Set primary monitor
+if [ "$(hostname)" = "aether" ]; then
+	xrandr --output HDMI-A-0 --primary
+fi
+
 # Set key repeat
 xset r rate 300 30
 

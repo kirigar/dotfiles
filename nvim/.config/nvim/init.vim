@@ -4,6 +4,7 @@ call plug#begin(stdpath('data') . '/plugged')
 Plug 'morhetz/gruvbox'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'lervag/vimtex'
+Plug 'SirVer/ultisnips'
 
 call plug#end()
 
@@ -110,6 +111,7 @@ nnoremap <leader>f  <Plug>(coc-format-selected)
 
 " Set tab width
 set shiftwidth=4
+set tabstop=4
 
 " Edit vimrc easily
 nnoremap <silent> <leader>ev :vsplit $MYVIMRC<cr>
@@ -123,8 +125,19 @@ nnoremap ZX ZQ
 
 autocmd FileType sh nnoremap <localleader>c :!shellcheck %<cr>
 autocmd FileType sh nnoremap <localleader>l :!./%<cr>
-autocmd FileType cpp noremap <localleader>l :!g++ % && ./a.out<cr>
+autocmd FileType cpp nnoremap <localleader>l :!g++ % && ./a.out<cr>
+autocmd FileType python nnoremap <localleader>l :!python %<cr>
+
+autocmd FileType tex inoremap { {}<left>
+autocmd FileType tex inoremap [ []<left>
+autocmd FileType tex inoremap ( ()<left>
+autocmd FileType tex inoremap $ $$<left>
+
+nnoremap <leader>wc :!wc -w < %<cr>
 
 vnoremap  <leader>y  "+y
 nnoremap  <leader>Y  "+yg_
 nnoremap  <leader>y  "+y
+
+nnoremap j gj
+nnoremap k gk
