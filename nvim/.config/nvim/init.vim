@@ -4,9 +4,17 @@ call plug#begin(stdpath('data') . '/plugged')
 Plug 'morhetz/gruvbox'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'lervag/vimtex'
-Plug 'SirVer/ultisnips'
 
 call plug#end()
+
+" Coc Extensions
+let g:coc_global_extensions = [
+	\'coc-snippets',
+	\'coc-vimtex',
+	\'coc-python',
+	\'coc-json',
+	\'coc-clangd'
+	\]
 
 let g:tex_flavor = "LaTeX"
 
@@ -141,3 +149,18 @@ nnoremap  <leader>y  "+y
 
 nnoremap j gj
 nnoremap k gk
+
+" Use <C-l> for trigger snippet expand.
+imap <C-l> <Plug>(coc-snippets-expand)
+
+" Use <C-j> for select text for visual placeholder of snippet.
+vmap <C-j> <Plug>(coc-snippets-select)
+
+" Use <C-j> for jump to next placeholder, it's default of coc.nvim
+let g:coc_snippet_next = '<tab>'
+
+" Use <C-k> for jump to previous placeholder, it's default of coc.nvim
+let g:coc_snippet_prev = '<s-tab>'
+
+" Use <C-j> for both expand and jump (make expand higher priority.)
+imap <C-j> <Plug>(coc-snippets-expand-jump)
