@@ -35,8 +35,5 @@ fi
 # Set key repeat
 xset r rate 300 30
 
-# Start the emacs daemon
-emacs --daemon
-
 # Star window manager
 exec bspwm
