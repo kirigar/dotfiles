@@ -1,6 +1,6 @@
-mpd/database
-mpd/pid
-mpd/state
-ncmpcpp/error.log
-nvim/.netrwhist
-zsh/.zcompdump
+**/mpd/database
+**/mpd/pid
+**/mpd/state
+**/ncmpcpp/error.log
+**/nvim/.netrwhist
+**/zsh/.zcompdump
