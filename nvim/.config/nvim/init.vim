@@ -3,13 +3,19 @@ call plug#begin(stdpath('data') . '/plugged')
 
 Plug 'morhetz/gruvbox'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'SirVer/ultisnips'
 Plug 'lervag/vimtex'
+Plug  'KeitaNakamura/tex-conceal.vim', {'for': 'tex'}
 
 call plug#end()
 
+" Tex conceal config
+set conceallevel=2
+let g:tex_conceal="abdgm"
+
 " Coc Extensions
 let g:coc_global_extensions = [
-	\'coc-snippets',
+	\'coc-ultisnips',
 	\'coc-vimtex',
 	\'coc-python',
 	\'coc-json',
@@ -20,6 +26,10 @@ let g:tex_flavor = "LaTeX"
 
 " Netrw configuration
 let g:netrw_banner = 0
+
+let g:UltiSnipsExpandTrigger="<c-l>"
+let g:UltiSnipsJumpForwardTrigger="<c-j>"
+let g:UltiSnipsJumpBackwardTrigger="<c-k>"
 
 " Set leader keys
 let maplocalleader=','
@@ -151,16 +161,12 @@ nnoremap j gj
 nnoremap k gk
 
 " Use <C-l> for trigger snippet expand.
-imap <C-l> <Plug>(coc-snippets-expand)
-
-" Use <C-j> for select text for visual placeholder of snippet.
-vmap <C-j> <Plug>(coc-snippets-select)
+"imap <C-l> <Plug>(coc-snippets-expand)
 
 " Use <C-j> for jump to next placeholder, it's default of coc.nvim
-let g:coc_snippet_next = '<tab>'
+"let g:coc_snippet_next = '<c-j>'
 
 " Use <C-k> for jump to previous placeholder, it's default of coc.nvim
-let g:coc_snippet_prev = '<s-tab>'
+"let g:coc_snippet_prev = '<c-k>'
 
-" Use <C-j> for both expand and jump (make expand higher priority.)
-imap <C-j> <Plug>(coc-snippets-expand-jump)
+nnoremap <leader>es :UltiSnipsEdit<cr>
