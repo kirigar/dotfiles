@@ -5,7 +5,8 @@ Plug 'morhetz/gruvbox'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'SirVer/ultisnips'
 Plug 'lervag/vimtex'
-Plug  'KeitaNakamura/tex-conceal.vim', {'for': 'tex'}
+Plug 'KeitaNakamura/tex-conceal.vim', {'for': 'tex'}
+Plug 'jiangmiao/auto-pairs'
 
 call plug#end()
 
@@ -146,10 +147,8 @@ autocmd FileType sh nnoremap <localleader>l :!./%<cr>
 autocmd FileType cpp nnoremap <localleader>l :!g++ % && ./a.out<cr>
 autocmd FileType python nnoremap <localleader>l :!python %<cr>
 
-autocmd FileType tex inoremap { {}<left>
-autocmd FileType tex inoremap [ []<left>
-autocmd FileType tex inoremap ( ()<left>
-autocmd FileType tex inoremap $ $$<left>
+" Auto pairs for LaTeX
+autocmd FileType tex let b:AutoPairs = {'$':'$', '$$':'$$', '(':')', '{':'}', '[':']', "'":"'", '"':'"'}
 
 nnoremap <leader>wc :!wc -w < %<cr>
 
