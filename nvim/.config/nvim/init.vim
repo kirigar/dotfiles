@@ -4,11 +4,13 @@ call plug#begin(stdpath('data') . '/plugged')
 Plug 'morhetz/gruvbox'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'SirVer/ultisnips'
-Plug 'lervag/vimtex'
+Plug 'lervag/vimtex', {'for': 'tex'}
 Plug 'KeitaNakamura/tex-conceal.vim', {'for': 'tex'}
 Plug 'jiangmiao/auto-pairs'
 
 call plug#end()
+
+let g:vimtex_matchparen_enabled = 0
 
 " Tex conceal config
 set conceallevel=2
@@ -158,14 +160,5 @@ nnoremap  <leader>y  "+y
 
 nnoremap j gj
 nnoremap k gk
-
-" Use <C-l> for trigger snippet expand.
-"imap <C-l> <Plug>(coc-snippets-expand)
-
-" Use <C-j> for jump to next placeholder, it's default of coc.nvim
-"let g:coc_snippet_next = '<c-j>'
-
-" Use <C-k> for jump to previous placeholder, it's default of coc.nvim
-"let g:coc_snippet_prev = '<c-k>'
 
 nnoremap <leader>es :UltiSnipsEdit<cr>
