@@ -19,6 +19,8 @@ export PYLINTHOME="$XDG_CACHE_HOME/pylint.d"
 export GNUPGHOME="$XDG_DATA_HOME/gnupg"
 
 export ANDROID_SDK_HOME="$XDG_CONFIG_HOME/android"
+export ANDROID_AVD_HOME="$XDG_DATA_HOME/android/"
+export ANDROID_EMULATOR_HOME="$XDG_DATA_HOME/android/"
 export ADB_VENDOR_KEY="$XDG_CONFIG_HOME/android"
 
 export NPM_CONFIG_USERCONFIG="$XDG_CONFIG_HOME/npm/npmrc"
@@ -29,17 +31,6 @@ export RUSTUP_HOME="$XDG_DATA_HOME/rustup"
 export _JAVA_OPTIONS=-Djava.util.prefs.userRoot="$XDG_CONFIG_HOME/java"
 
 export STACK_ROOT="$XDG_DATA_HOME/stack"
-
-# Swallow behaviour
-#run_replace() {
-#	echo
-#	eval devour $BUFFER
-#	BUFFER=''
-#	zle reset-prompt
-#}
-#
-#zle -N run_replace
-#bindkey '^P' run_replace
 
 # Add to path
 export PATH="$HOME/.local/bin:$PATH"
