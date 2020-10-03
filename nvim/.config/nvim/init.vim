@@ -162,3 +162,5 @@ nnoremap j gj
 nnoremap k gk
 
 nnoremap <leader>es :UltiSnipsEdit<cr>
+
+set expandtab
