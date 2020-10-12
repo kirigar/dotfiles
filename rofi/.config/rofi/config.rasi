@@ -17,6 +17,10 @@ configuration {
    background-color: @blackdarkest;
 }
 
+element-icon {
+    size: 2.5ch;
+}
+
 window {
    background-color: @blackdarkest;
    anchor: north;

@@ -16,7 +16,7 @@ super + b
 
 # Program launcher
 super + @space
-	rofi -show drun
+	rofi -show drun -show-icons
 
 # Music player
 super + n
