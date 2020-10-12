@@ -7,6 +7,7 @@ Plug 'SirVer/ultisnips'
 Plug 'lervag/vimtex', {'for': 'tex'}
 Plug 'KeitaNakamura/tex-conceal.vim', {'for': 'tex'}
 Plug 'jiangmiao/auto-pairs'
+Plug 'jackguo380/vim-lsp-cxx-highlight'
 
 call plug#end()
 
